@@ -2,7 +2,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express")
 const app = express();
-const cors = require("cors")
+const cors = require("cors")  //This middleware allows your backend to accept requests from different origins 
+const db = require("./db/database");
+db();
 
 app.use(cors());
 
