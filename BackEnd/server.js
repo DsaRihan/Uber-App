@@ -3,4 +3,7 @@ const app = require("./app")
 const port = process.env.PORT || 3000
 
 const server = http.createServer(app)
-server.listen(300)
+
+server.listen(port, ()=>{
+    console.log(`listening on port ${port}`)
+})
