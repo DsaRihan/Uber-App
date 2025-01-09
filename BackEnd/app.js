@@ -6,6 +6,7 @@ const cors = require("cors")  //This middleware allows your backend to accept re
 const db = require("./db/database");
 db();
 const userRoute = require("./routes/userroutes")
+const captainRoute = require("./routes/captainroutes"); 
 const cookieparser = require("cookie-parser");
 
 app.use(cors());
@@ -15,6 +16,7 @@ app.get('/',(req,res)=>{
 })
 app.use(express.json());
 app.get('/users',userRoute)
+app.use('/captain',captainRoute)
 app.use(cookieparser());
 
 module.exports = app;
