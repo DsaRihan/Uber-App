@@ -8,7 +8,7 @@ const Userlogin = () => {
     // to store the data
     const [userdata, setuserdata] = useState({});
 
-    submitHandler = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
         setuserdata({
             email:email,
@@ -21,7 +21,7 @@ const Userlogin = () => {
     <div className='p-7 h-screen flex flex-col justify-between'>
         <div>
             <img className='w-16' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
-            <form action="" onSubmit={(e)=>{submitHandler(e)}}>
+            <form onSubmit={(e)=>{submitHandler(e)}}>
                 <h3 className='text-lg font-medium mb-2 mt-7'>Enter your Email</h3>
                 <input className='bg-[#eeeeee] mb-7 rounded px-4 py-2 w-full text-lg placeholder:text-base border' 
                     required type="email" placeholder='email@example.com'
@@ -35,12 +35,15 @@ const Userlogin = () => {
                 </button>
 
                 {/* incase of new user */}
-                <p className='text-center'>New Here ? <Link to='/signup' className='text-blue-500'>Create New Account</Link></p>
+                <p className='text-center'>New Here ? <Link to='/signup' className='text-blue-500'
+                    >Create New Account</Link>
+                </p>
             </form>
         </div>
 
         <div>
-            <Link className='flex items-center justify-center bg-[#10b461] mb-7 text-white rounded px-4 py-2 w-full text-lg placeholder:text-base'>
+            <Link to='/captain-login' className='flex items-center justify-center bg-[#10b461] mb-7 text-white rounded 
+                px-4 py-2 w-full text-lg placeholder:text-base'>
                 Sign-In as Captain
             </Link>
         </div>
@@ -49,3 +52,5 @@ const Userlogin = () => {
 }
 
 export default Userlogin
+
+
